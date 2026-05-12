@@ -1,0 +1,14 @@
+{
+	"appId": "com.example.habittracker",
+	"appName": "寸进",
+	"webDir": "client/dist",
+	"server": {
+		"androidScheme": "https"
+	},
+	"package": {
+		"android": {
+			"versionCode": 2,
+			"versionName": "2.0.0"
+		}
+	}
+}

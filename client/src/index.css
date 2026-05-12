@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-gray-700 antialiased bg-gray-50;
+  }
+  .dark body, .dark {
+    background-color: #111827;
+    color: #d1d5db;
+  }
+  .dark h1, .dark h2, .dark h3, .dark h4 {
+    color: #f3f4f6;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-xl font-medium transition-all duration-150 text-sm tracking-wide;
+  }
+  .btn-primary {
+    @apply btn bg-indigo-600 text-white hover:bg-indigo-700 active:bg-indigo-800 shadow-sm hover:shadow-md;
+  }
+  .btn-secondary {
+    @apply btn bg-gray-100 text-gray-600 hover:bg-gray-200 active:bg-gray-300 border border-gray-200;
+  }
+  .dark .btn-secondary {
+    background-color: #1f2937;
+    color: #d1d5db;
+    border-color: #374151;
+  }
+  .dark .btn-secondary:hover {
+    background-color: #374151;
+  }
+  .btn-danger {
+    @apply btn bg-red-50 text-red-600 hover:bg-red-100 active:bg-red-200 border border-red-200;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-[0_1px_3px_0_rgba(0,0,0,0.06),0_1px_2px_-1px_rgba(0,0,0,0.06)] border border-gray-100/80 p-5;
+  }
+  .dark .card {
+    @apply bg-gray-800 border-gray-700/80;
+  }
+  .input {
+    @apply w-full px-3.5 py-2.5 border border-gray-200 rounded-xl text-sm bg-gray-50/50 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:bg-white transition-all duration-150 placeholder:text-gray-400;
+  }
+  .dark .input {
+    @apply bg-gray-700/50 border-gray-600 text-gray-200 focus:bg-gray-700 placeholder:text-gray-500;
+  }
+  .label {
+    @apply block text-xs font-semibold text-gray-500 mb-1.5 uppercase tracking-wider;
+  }
+  .dark .label {
+    @apply text-gray-400;
+  }
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .dark .badge {
+    @apply text-gray-400;
+  }
+}
+
+/* ===== Dark mode overrides (plain CSS to avoid Tailwind circular deps) ===== */
+.dark .bg-white { background-color: #1f2937 !important; }
+.dark .bg-gray-50 { background-color: #111827 !important; }
+.dark .bg-gray-100 { background-color: #374151 !important; }
+.dark .border-gray-100 { border-color: #374151 !important; }
+.dark .border-gray-200 { border-color: #4b5563 !important; }
+.dark .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0,0,0,0.3) !important; }
+.dark .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.4) !important; }
+.dark .hover\:bg-gray-50:hover { background-color: #374151 !important; }
+.dark .hover\:bg-gray-100:hover { background-color: #4b5563 !important; }
+html.dark [class*="text-gray-9"] { color: #f9fafb !important; }
+html.dark [class*="text-gray-8"] { color: #f3f4f6 !important; }
+html.dark [class*="text-gray-7"] { color: #d1d5db !important; }
+html.dark [class*="text-gray-6"], html.dark [class*="text-gray-5"], html.dark [class*="text-gray-4"] { color: #9ca3af !important; }
+html.dark [class*="text-gray-3"] { color: #d1d5db !important; }
+html.dark [class*="text-indigo-6"] { color: #818cf8 !important; }
+html.dark [class*="text-emerald-6"] { color: #34d399 !important; }
+html.dark [class*="text-amber-6"] { color: #fbbf24 !important; }
+html.dark [class*="text-purple-6"] { color: #a78bfa !important; }
+html.dark [class*="text-red-6"] { color: #f87171 !important; }
+html.dark [class*="text-green-6"] { color: #4ade80 !important; }
+html.dark [class*="text-green-7"] { color: #34d399 !important; }
+html.dark [class*="bg-green-5"] { background-color: #065f46 !important; }
+html.dark [class*="border-green-5"] { border-color: #065f46 !important; }
+html.dark [class*="bg-emerald-"] { background-color: #065f46 !important; }
+html.dark [class*="text-emerald-"] { color: #34d399 !important; }
+html.dark [class*="bg-yellow-5"] { background-color: #92400e !important; }
+html.dark [class*="bg-red-4"] { background-color: #7f1d1d !important; }
+html.dark [class*="bg-indigo-5"] { background-color: #3730a3 !important; }
+.dark input:not([type="checkbox"]):not([type="range"]), .dark textarea, .dark select {
+  background-color: #374151 !important;
+  border-color: #4b5563 !important;
+  color: #d1d5db !important;
+}
+.dark input:not([type="checkbox"]):not([type="range"]):focus, .dark textarea:focus {
+  background-color: #374151 !important;
+}
